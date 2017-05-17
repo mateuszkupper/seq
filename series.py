@@ -7,7 +7,7 @@ print(datax.size)
 print(datay.size)
 
 #n_steps=datax.size
-n_steps=18
+n_steps=16
 n_inputs=1
 n_neurons=100
 n_outputs=1
@@ -41,8 +41,8 @@ y_list = np.array_split(datay, datay.size//n_steps)
 print(len(X_list))
 with tf.Session() as sess:
 	init.run()
-	for i in range(20):
-		for iteration in range(14435//batch_size):
+	for i in range(10):
+		for iteration in range(258576//batch_size):
 			X_batch, y_batch = np.array([X_list[iteration]]), np.array([y_list[iteration]])
 			#for iteration in range(n_iterations):
 			#X_batch, y_batch = datax, datay
