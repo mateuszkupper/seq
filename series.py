@@ -2,12 +2,12 @@ import tensorflow as tf
 from tensorflow.contrib.layers import fully_connected
 import numpy as np
 from numpy import genfromtxt
-datax, datay = genfromtxt('C:/Users/mkupper/num.csv', delimiter=','), genfromtxt('C:/Users/mkupper/numy.csv', delimiter=',')
+datax, datay = genfromtxt('/home/mateusz/ml/joyce/num.csv', delimiter=','), genfromtxt('/home/mateusz/ml/joyce/numy.csv', delimiter=',')
 print(datax.size)
 print(datay.size)
 
 #n_steps=datax.size
-n_steps=20
+n_steps=18
 n_inputs=1
 n_neurons=100
 n_outputs=1
@@ -32,7 +32,7 @@ training_op = optimizer.minimize(loss)
 
 init = tf.global_variables_initializer()
 n_iterations = 10
-batch_size = 3
+batch_size = 20
 X_list = np.array_split(datax, datax.size//n_steps)
 y_list = np.array_split(datay, datay.size//n_steps)
 
@@ -41,8 +41,8 @@ y_list = np.array_split(datay, datay.size//n_steps)
 print(len(X_list))
 with tf.Session() as sess:
 	init.run()
-	for i in range(300):
-		for iteration in range(43,293//batch_size):
+	for i in range(20):
+		for iteration in range(14435//batch_size):
 			X_batch, y_batch = np.array([X_list[iteration]]), np.array([y_list[iteration]])
 			#for iteration in range(n_iterations):
 			#X_batch, y_batch = datax, datay
