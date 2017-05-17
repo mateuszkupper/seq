@@ -13,7 +13,7 @@ public class decoder {
 	public static void main(String[] args) throws IOException {
 		InputStream is;
 		try {
-			is = new FileInputStream("C:/Users/mkupper/text.txt");
+			is = new FileInputStream("/home/mateusz/ml/joyce/text.txt");
 			BufferedReader buf = new BufferedReader(new InputStreamReader(is)); 
 			String line = buf.readLine(); StringBuilder sb = new StringBuilder(); 
 			while(line != null){ 
@@ -44,10 +44,10 @@ public class decoder {
 			fileAsStringY+="40,";
 			int index = fileAsStringY.indexOf(",");
 			fileAsStringY = fileAsStringY.substring(index+1);
-			PrintWriter out = new PrintWriter("C:/Users/mkupper/num.csv");
+			PrintWriter out = new PrintWriter("/home/mateusz/ml/joyce/num.csv");
 			 out.println(fileAsString);
 			 out.close();
-			PrintWriter outy = new PrintWriter("C:/Users/mkupper/numy.csv");
+			PrintWriter outy = new PrintWriter("/home/mateusz/ml/joyce/numy.csv");
 			 outy.println(fileAsStringY);
 			 outy.close(); 
 			 
